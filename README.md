@@ -128,9 +128,9 @@ Now you will deploy the application to Azure Static Web Apps.
 6.  For **Deployment details**, select **GitHub**.
 7.  Sign in to GitHub and select your **Organization**, **Repository**, and **Branch (Recommend Main)**.
 8.  For **Build Presets**, select **Custom**.
-9.  Set the **App location** to `/`.
+9.  Leave **App location** as `/`.
 10. Set the **Api location** to `api`.
-11. Set the **Output location** to `/`.
+11. Leave **Output location** as `.`.
 12. Click **Review + create**, and then **Create**.
 13. Once the Static Web App is deployed, it will give you a URL. Copy this URL.
 14. Go back to your **Azure AD App registration** -\> **Authentication** and add this new URL as a **Single-page application (SPA)** redirect URI.
