@@ -126,7 +126,7 @@ Now you will deploy the application to Azure Static Web Apps.
 4.  Enter a **Name** for your Weather Dashboard or somethign similar.
 5.  Choose a **Region**.
 6.  For **Deployment details**, select **GitHub**.
-7.  Sign in to GitHub and select your **Organization**, **Repository**, and **Branch**.
+7.  Sign in to GitHub and select your **Organization**, **Repository**, and **Branch (Recommend Main)**.
 8.  For **Build Presets**, select **Custom**.
 9.  Set the **App location** to `/`.
 10. Set the **Api location** to `api`.
