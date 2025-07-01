@@ -35,7 +35,7 @@ Follow these steps to set up the Weather Dashboard in your own environment.
 ### Step 1: Prerequisites
 
   * A **GitHub account**.
-  * An **Azure account** with an active subscription. *Credit card required, but zero cost when using Free tier Static Web App.
+  * An **Azure account** with an active subscription.  *Credit card required, but zero cost when using Free tier Static Web App.
   * Access to create a **Microsoft List** (requires a Microsoft 365 subscription with SharePoint).
 
 ### Step 2: Create a Microsoft List
@@ -46,15 +46,15 @@ You need to create a Microsoft List to store the weather data.
 2.  Name the list whatever you like.
 3.  Add the following columns to your list with the specified types:
 
-| Column Name | Type |
-| --- | --- |
-| Title | Single line of text |
-| LatitudeLongitude | Single line of text |
-| Name | Single line of text |
-| Temperature | Number |
-| TemperatureUnit | Single line of text |
-| ShortForecast | Single line of text |
-| DateTime | Single line of text |
+| Column Name       | Type                  |
+| ----------------- | --------------------- |
+| Title             | Single line of text   |
+| LatitudeLongitude | Single line of text   |
+| Name              | Single line of text   |
+| Temperature       | Number                |
+| TemperatureUnit   | Single line of text   |
+| ShortForecast     | Single line of text   |
+| DateTime          | Single line of text   |
 
 ### Step 3: App Registration in Azure AD
 
@@ -85,12 +85,31 @@ You need to update the frontend code with your Azure AD App Registration details
       authority: "https://login.microsoftonline.com/YOUR_TENANT_ID", // Replace with your Directory (tenant) ID
       clientId: "YOUR_CLIENT_ID", // Replace with your Application (client) ID
       redirectUri: window.location.origin,
-      listUrl: "https://graph.microsoft.com/v1.0/sites/YOUR_SHAREPOINT_SITE/lists/YOUR_LIST_ID/items", // Replace with your list's Graph API URL
+      listUrl: "https://graph.microsoft.com/v1.0/sites/YOUR_SITE_ID/lists/YOUR_LIST_ID/items", // Replace with your list's Graph API URL
       cacheLocation: "sessionStorage",
     };
     ```
 
-    To get your `listUrl`, you can use the Microsoft Graph Explorer. You'll need to find the ID of your SharePoint site and the ID of your list.
+#### Finding Your Site and List ID
+
+To get the `listUrl`, you need the ID of your SharePoint site and the ID of your list. You can find these using the **Microsoft Graph Explorer**.
+
+1.  **Navigate to Graph Explorer**: Open your web browser and go to [https://developer.microsoft.com/en-us/graph/graph-explorer](https://developer.microsoft.com/en-us/graph/graph-explorer).
+2.  **Sign In**: Sign in with the same account you use for your Azure and Microsoft 365 subscription.
+3.  **Find your Site ID**:
+      * In the query bar at the top, enter the following URL. Make sure to replace `YOUR_TENANT.sharepoint.com` with your actual tenant name and `/sites/YOUR_SITE_NAME` with the URL path to your SharePoint site.
+      * **Request URL**: `GET` `https://graph.microsoft.com/v1.0/sites/YOUR_TENANT.sharepoint.com:/sites/YOUR_SITE_NAME`
+      * Click **Run query**.
+      * In the response preview below, you will see an `id` field. This is your **Site ID**. It's a long string containing your tenant name and two GUIDs. Copy this entire string.
+4.  **Find your List ID**:
+      * Now, modify the query to use the Site ID you just copied.
+      * **Request URL**: `GET` `https://graph.microsoft.com/v1.0/sites/YOUR_SITE_ID/lists`
+      * Click **Run query**.
+      * The response will show all the lists on that site. Look through the response to find the list you created by its `displayName`.
+      * Once you find your list, copy its `id` value. This is your **List ID**.
+5.  **Construct the Final `listUrl`**:
+      * Now, assemble the final URL for the `listUrl` property in your `graph-service.js` file by replacing the placeholders with the IDs you found:
+      * `https://graph.microsoft.com/v1.0/sites/YOUR_SITE_ID/lists/YOUR_LIST_ID/items`
 
 ### Step 5: Fork and Upload to GitHub
 
