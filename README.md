@@ -46,15 +46,15 @@ You need to create a Microsoft List to store the weather data.
 2.  Name the list whatever you like.
 3.  Add the following columns to your list with the specified types:
 
-| Column Name        | Type                  |
-| ------------------ | --------------------- |
-| Title              | Single line of text   |
-| Latitude Longitude | Single line of text   |
-| Name               | Single line of text   |
-| Temperature        | Number                |
-| Temperature Unit   | Single line of text   |
-| Short Forecast     | Single line of text   |
-| Date Time          | Date and time         |
+| Column Name        | Type                  | Sample Data           |
+| ------------------ | --------------------- | --------------------- |
+| Title              | Single line of text   | New York, NY          |
+| Latitude Longitude | Single line of text   | 40.7128,-74.0060      |
+| Name               | Single line of text   | This Afternoon        |
+| Temperature        | Number                | 86                    |
+| Temperature Unit   | Single line of text   | F                     |
+| Short Forecast     | Single line of text   | Haze                  |
+| Date Time          | Date and time         | 6/30/2025 3:05 PM     |
 
 ### Step 3: App Registration in Azure AD
 
