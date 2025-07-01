@@ -35,7 +35,7 @@ Follow these steps to set up the Weather Dashboard in your own environment.
 ### Step 1: Prerequisites
 
   * A **GitHub account**.
-  * An **Azure account** with an active subscription.
+  * An **Azure account** with an active subscription. *Credit card required, but zero cost when using Free tier Static Web App.
   * Access to create a **Microsoft List** (requires a Microsoft 365 subscription with SharePoint).
 
 ### Step 2: Create a Microsoft List
