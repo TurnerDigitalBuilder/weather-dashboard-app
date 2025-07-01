@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Weather Dashboard</h1>
+    <div id="status">Loading...</div>
+
+    <div class="controls-section">
+      <div class="controls-table">
+        <div class="sync-container">
+          <button id="syncButton">Sync Weather</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <div class="table-wrapper">
+        <div class="table-container">
+          <table id="weatherTable">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Forecast Period</th>
+                <th>Temperature</th>
+                <th>Unit</th>
+                <th>Forecast</th>
+                <th>Date Time</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr><td colspan="6" class="loading">Loading table data…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="auth-status" class="auth-status">
+    <span id="auth-text"></span>
+    <button id="logoutButton" style="display: none; margin-left: 10px;">Sign Out</button>
+  </div>
+
+  <script src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+  <script src="graph-service.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
