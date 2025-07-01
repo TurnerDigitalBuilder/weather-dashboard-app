@@ -123,7 +123,7 @@ Now you will deploy the application to Azure Static Web Apps.
 1.  Go to the **Azure portal** and search for **Static Web Apps**.
 2.  Click **Create**.
 3.  Select your **Subscription** and a **Resource Group**.
-4.  Enter a **Name** for your Weather App or somethign similar.
+4.  Enter a **Name** for your Weather Dashboard or somethign similar.
 5.  Choose a **Region**.
 6.  For **Deployment details**, select **GitHub**.
 7.  Sign in to GitHub and select your **Organization**, **Repository**, and **Branch**.
